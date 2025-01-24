@@ -1,30 +1,31 @@
 <script>
-	export let name;
+
+	import Header from "./UI/Header.svelte";
+	import MeetupItem from "./MeetUps/MeetupItem.svelte";
+	const meetups = [
+		{
+			id: 'm1',
+			title: 'Coding Bootcamp',
+			subtitle: 'Learn code fast',
+			description: 'In his meetup we will practice code',
+			imgURL: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29kaW5nfGVufDB8fDB8fHww",
+			address: "27 Joy St.",
+			contactEmail: 'code@test.com',
+		},
+		{
+			id: 'm2',
+			title: 'Swimming Camp',
+			subtitle: 'Enjoy swimming with your friends from all over',
+			description: 'Swimming classes, freetime and more!',
+			imgURL: "https://clearcomfort.com/wp-content/uploads/2019/05/AdobeStock_34148619-1024x683.jpeg",
+			contactEmail: 'swim@justdive.com',
+		}
+	]
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
+<Header />
 
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
+{#each meetups as meetup}
+	<MeetupItem />
+{/each}
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
-</style>
