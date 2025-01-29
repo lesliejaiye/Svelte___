@@ -2,6 +2,7 @@
 
 	import Header from "./UI/Header.svelte";
 	import MeetupItem from "./MeetUps/MeetupItem.svelte";
+
 	const meetups = [
 		{
 			id: 'm1',
@@ -23,9 +24,17 @@
 	]
 </script>
 
+<style>
+	#meetups {
+		margin-top: 5rem;
+	}
+</style>
+
 <Header />
 
-{#each meetups as meetup}
-	<MeetupItem />
-{/each}
 
+<section id="meetups">
+	{#each meetups as meetup}
+		<MeetupItem />
+	{/each}
+</section>
