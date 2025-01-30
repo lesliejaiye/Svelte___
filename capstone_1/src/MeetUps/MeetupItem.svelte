@@ -1,10 +1,14 @@
 <script>
+
+    import Button from "../UI/Button.svelte";
+    
     export let title;
     export let subtitle;
     export let imageURL;
     export let description;
     export let address;
     export let email;
+
 </script>
 
 <style>
@@ -59,6 +63,10 @@
     div {
       text-align: right;
     }
+
+    .content {
+        height: 4rem;
+    }
   </style>
    
   <article>
@@ -74,9 +82,10 @@
       <p>{description}</p>
     </div>
     <footer>
-        <a href="mailto:{email}"></a>
-      <button>Show Details</button>
-      <button>Favorite</button>
+        <!-- svelte-ignore a11y-missing-content -->
+        <Button href="mailto:{email}" caption="Contact"/>
+        <Button type="button" caption="Favorite" mode="outline" />
+        <Button type="button" caption="Show Details"/>
     </footer>
   </article>
    
